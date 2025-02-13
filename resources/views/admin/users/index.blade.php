@@ -6,13 +6,13 @@
             <div class="row mb-2 callout callout-success">
                 <div class="col-sm-6">
                     <h1>
-                      User Management
+                      Gestão de Utilizadores
                     </h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('admin.home') }}">Home</a></li>
-                        <li class="breadcrumb-item active">Users</li>
+                        <li class="breadcrumb-item active">Utilizadores</li>
                     </ol>
                 </div>
             </div>

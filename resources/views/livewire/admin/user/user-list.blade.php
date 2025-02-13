@@ -19,14 +19,14 @@
     <div class="card-header">
         <div class="d-flex justify-content-between align-items-center w-100">
             <div class="btn btn-primary badge-pill">
-                <h3 class="card-title"><i class="fas fa-window-restore "></i> Users</h3>
+                <h3 class="card-title"><i class="fas fa-window-restore "></i> Utilizadores</h3>
             </div>
 
             <div class="d-flex align-items-center" style="gap: 10px;">
 
                 <div class="d-flex align-items-center bg-light p-2 rounded" style="gap: 10px;">
                     <input type="text" class="form-control form-control-sm" style="width:300px;"
-                        wire:model.live.debounce.500ms="searchTermForm" placeholder="Search by name, email, or role">
+                        wire:model.live.debounce.500ms="searchTermForm" placeholder="Pesquisar por nome, email ou função">
                     <span class="input-group-append">
                         <button type="button" class="btn btn-info btn-sm mr-1 disabled"><i
                                 class="fa fa-search"></i></button>
@@ -35,7 +35,7 @@
 
                 <a class="btn btn-success btn-sm" href="{{ route('admin.users.create') }}"
                     wire:loading.class="disabled">
-                    <i class="fa fa-plus-circle mr-1"></i>New User
+                    <i class="fa fa-plus-circle mr-1"></i>Novo Utilizador
                 </a>
             </div>
         </div>
@@ -54,9 +54,9 @@
             <thead>
                 <tr>
                     <th style="width: 5%;">#</th>
-                    <th style="width: 10%;">Name</th>
+                    <th style="width: 10%;">Nome</th>
                     <th style="width: 10%;">E-mail</th>
-                    <th style="width: 10%;">Role</th>
+                    <th style="width: 10%;">Função</th>
                     <th style="width: 10%" class="text-center">Acções</th>
                 </tr>
             </thead>
@@ -70,13 +70,13 @@
                         <td class="text-center">
                             <div class="btn-group gap-4">
                                 <a href="{{ route('admin.users.edit', $user->id) }}" wire:loading.class="disabled"
-                                    class="btn btn-rounded btn-warning btn-sm" data-toggle="tooltip" title="Edit user">
+                                    class="btn btn-rounded btn-warning btn-sm" data-toggle="tooltip" title="Editar utilizador">
                                     <i class="fa fa-pencil-alt"></i>
                                 </a>
                                 <a href="#" wire:click="destroy({{ $user->id }})" title="Delete"
-                                    wire:confirm.prompt="Are you sure you want to delete it? Type {{ '"' . $user->name . '"' }} to confirm|{{ $user->name }}"
+                                    wire:confirm.prompt="Tem certeza que deseja eliminar? Digite {{ '"' . $user->name . '"' }} para confirmar|{{ $user->name }}"
                                     wire:loading.class="disabled" class="btn btn-rounded btn-danger btn-sm"
-                                    data-toggle="tooltip" title="Delete user">
+                                    data-toggle="tooltip" title="Eliminar utilizador">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </div>

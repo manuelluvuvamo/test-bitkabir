@@ -31,11 +31,11 @@ class UserList extends Component
     {
         try {
             $user->delete();
-            Log::info('User deleted', ['user' => $user]);
-            return $this->dispatch('toast', message: 'User deleted', notify: 'success');
+            Log::info('Utilizador eliminado', ['user' => $user]);
+            return $this->dispatch('toast', message: 'Utilizador eliminado', notify: 'success');
         } catch (\Throwable $th) {
-            Log::error('User delete failed', ['user' => $user, 'error' => $th->getMessage()]);
-            return $this->dispatch('toast', message: 'User delete failed', notify: 'error');
+            Log::error('Falhou ao eliminar o utilizador', ['user' => $user, 'error' => $th->getMessage()]);
+            return $this->dispatch('toast', message: 'Falhou ao eliminar o utilizador', notify: 'error');
         }
     }
 }

@@ -20,9 +20,9 @@
                 <div class="card-header">
                     <h3 class="card-title"><i class="fas fa-copy mr-1"></i>
                         @if ($edition == true)
-                            <span>Edit User</span>
+                            <span>Editar Utilizador</span>
                         @else
-                            <span>New User</span>
+                            <span>Novo Utilizador</span>
                         @endif
                     </h3>
                 </div>
@@ -31,24 +31,30 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="form-group col-md-6">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" class="form-control" required wire:model.defer="state.name">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" class="form-control" required
+                                    wire:model.defer="state.name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" class="form-control" required wire:model.defer="state.email">
+                                <input type="email" id="email" class="form-control" required
+                                    wire:model.defer="state.email" {{ $edition ? 'readonly' : '' }}>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="form-group col-md-6">
-                                <label for="password">Password</label>
-                                <input type="password" id="password" class="form-control" required wire:model.defer="state.password">
+                        @if (!$edition)
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="password">Palavra-passe</label>
+                                    <input type="password" id="password" class="form-control" required
+                                        wire:model.defer="state.password">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="password_confirmation">Confirme a palavra-passe</label>
+                                    <input type="password" id="password_confirmation" class="form-control" required
+                                        wire:model.defer="state.password_confirmation">
+                                </div>
                             </div>
-                            <div class="form-group col-md-6">
-                                <label for="password_confirmation">Confirm Password</label>
-                                <input type="password" id="password_confirmation" class="form-control" required wire:model.defer="state.password_confirmation">
-                            </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -56,18 +62,20 @@
                 <div class="float-right">
                     @if ($edition == true)
                         <button type="submit" wire:loading.remove wire:target="update" class="btn btn-primary">
-                    @else
-                        <button type="submit" wire:loading.remove wire:target="store" class="btn btn-primary">
+                        @else
+                            <button type="submit" wire:loading.remove wire:target="store" class="btn btn-primary">
                     @endif
                     <i class="fa fa-check-circle mr-1"></i>
                     @if ($edition == true)
-                        <span>Update</span>
+                        <span>Atualizar</span>
                     @else
-                        <span>Submit</span>
+                        <span>Enviar</span>
                     @endif
                     </button>
-                    <button class="btn btn-warning" type="button" disabled wire:loading wire:target="{{ $edition ? 'update' : 'store' }}">
-                        <span class="spinner-border spinner-border-sm align-items-center" role="status" aria-hidden="true"></span>
+                    <button class="btn btn-warning" type="button" disabled wire:loading
+                        wire:target="{{ $edition ? 'update' : 'store' }}">
+                        <span class="spinner-border spinner-border-sm align-items-center" role="status"
+                            aria-hidden="true"></span>
                         Aguarde
                     </button>
                 </div>

@@ -12,7 +12,7 @@ trait SearchTerm
             $this->searchTerm = $this->searchTermForm;
         } else {
             if ($length <> 0) {
-                session()->flash('searchError', 'The search term must be at least 2 characters long.');
+                session()->flash('searchError', 'O termo de pesquisa deve ter pelo menos 2 caracteres.');
             }
             $this->searchTerm = '';
         }

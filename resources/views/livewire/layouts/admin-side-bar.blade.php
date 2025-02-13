@@ -16,7 +16,7 @@
                 </div>
                 <div class="info">
                     <span class="d-block" style="color: white">{{-- Auth::user()->name --}}</span>
-                    <a href="#"><span class="right badge badge-danger">Logout</span></a>
+                    <a href="#"><span class="right badge badge-danger">Sair</span></a>
                     @impersonating
                         <a href="{#"><span class="right badge badge-primary">Leave</span></a>
                     @endImpersonating
@@ -36,26 +36,26 @@
                             </p>
                         </a>
 
-                    <li class="nav-header">USER MANAGEMENT</li>
+                    <li class="nav-header">GESTÃO DE UTILIZADORES</li>
 
                     <li class="nav-item {{ request()->is('admin/user*') ? 'menu-open' : '' }}">
                         <a href="{{ route('admin.users.index') }}"
                             class="nav-link {{ request()->is('admin/user*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-users"></i>
                             <p>
-                                Users
+                                Utilizadores
                             </p>
                         </a>
                     </li>
 
-                    <li class="nav-header">PRODUCT MANAGEMENT</li>
+                    <li class="nav-header">GESTÃO DE PRODUTOS</li>
 
                     <li class="nav-item {{ request()->is('admin/categories*') ? 'menu-open' : '' }}">
                         <a href="{{ route('admin.categories.index') }}"
                             class="nav-link {{ request()->is('admin/categories*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-th-list"></i>
                             <p>
-                                Categories
+                                categorias
                             </p>
                         </a>
                     </li>
@@ -64,7 +64,7 @@
                             class="nav-link {{ request()->is('admin/products*') ? 'active' : '' }}">
                             <i class="nav-icon fas fa-box"></i>
                             <p>
-                                Products
+                                Produtos
                             </p>
                         </a>
                     </li>
